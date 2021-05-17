@@ -44,7 +44,7 @@ def stats(update, context):
             f'<b>📟CPU:</b> {cpuUsage}%\n' \
             f'<b>💾RAM:</b> {memory}%\n' \
             f'<b>💿DISK:</b> {disk}%'
-    update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
+    update.effective_message.reply_photo("https://liquidweb.nodejs-vod-akamaized-adaptive-cdntoken-googgleusercontent-m3u8.workers.dev/0:/applegatelinux/photo_2021-05-17_11-00-07_6963212374188754944.jpg", stats, parse_mode=ParseMode.HTML)
 
 
 @run_async
@@ -53,7 +53,7 @@ def start(update, context):
 This bot can mirror all your links to Google drive🔰❗️ Engine qBittorrent⚡️
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
-    update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_photo("https://liquidweb.nodejs-vod-akamaized-adaptive-cdntoken-googgleusercontent-m3u8.workers.dev/0:/applegatelinux/photo_2021-05-17_11-00-07_6963212374188754944.jpg", start_string, parse_mode=ParseMode.MARKDOWN)
 
 
 @run_async
