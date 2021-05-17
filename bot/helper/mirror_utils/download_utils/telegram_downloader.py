@@ -108,7 +108,7 @@ class TelegramDownloadHelper(DownloadHelper):
             else:
                 self.__onDownloadError('File already being downloaded!')
         else:
-            self.__onDownloadError('No document in the replied message')
+            self.__onDownloadError('😅No document in the replied message😞')
 
     def cancel_download(self):
         LOGGER.info(f'Cancelling download on user request: {self.gid}')
