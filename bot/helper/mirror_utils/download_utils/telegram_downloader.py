@@ -52,7 +52,7 @@ class TelegramDownloadHelper(DownloadHelper):
 
     def __onDownloadProgress(self, current, total):
         if self.__is_cancelled:
-            self.__onDownloadError('Cancelled by user!')
+            self.__onDownloadError('Cancelled by user❗️🥺')
             self._bot.stop_transmission()
             return
         with self.__resource_lock:
@@ -82,7 +82,7 @@ class TelegramDownloadHelper(DownloadHelper):
             self.__onDownloadComplete()
         else:
             if not self.__is_cancelled:
-                self.__onDownloadError('Internal error occurred')
+                self.__onDownloadError('Internal error occurred😢')
 
     def add_download(self, message, path, filename):
         _message = self._bot.get_messages(message.chat.id, message.message_id)
