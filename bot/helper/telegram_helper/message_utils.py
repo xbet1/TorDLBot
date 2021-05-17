@@ -71,9 +71,9 @@ def update_all_messages():
     used = get_readable_file_size(used)
     free = get_readable_file_size(free)
     msg = get_readable_message()
-    msg += f"<b>CPU:</b> {psutil.cpu_percent()}%" \
-           f" <b>RAM:</b> {psutil.virtual_memory().percent}%" \
-           f" <b>DISK:</b> {psutil.disk_usage('/').percent}%"
+    msg += f"<b>📟CPU:</b> {psutil.cpu_percent()}%" \
+           f" <b>💾RAM:</b> {psutil.virtual_memory().percent}%" \
+           f" <b>💿DISK:</b> {psutil.disk_usage('/').percent}%"
     with download_dict_lock:
         dlspeed_bytes = 0
         uldl_bytes = 0
@@ -109,9 +109,9 @@ def sendStatusMessage(msg, bot):
     used = get_readable_file_size(used)
     free = get_readable_file_size(free)
     progress = get_readable_message()
-    progress += f"<b>CPU:</b> {psutil.cpu_percent()}%" \
-           f" <b>RAM:</b> {psutil.virtual_memory().percent}%" \
-           f" <b>DISK:</b> {psutil.disk_usage('/').percent}%"
+    progress += f"<b>📟CPU:</b> {psutil.cpu_percent()}%" \
+           f" <b>💾RAM:</b> {psutil.virtual_memory().percent}%" \
+           f" <b>💿DISK:</b> {psutil.disk_usage('/').percent}%"
     with download_dict_lock:
         dlspeed_bytes = 0
         uldl_bytes = 0
