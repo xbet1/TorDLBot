@@ -28,7 +28,7 @@ def authorize(update,context):
             if chat_id not in AUTHORIZED_CHATS:
                 msg = DbManger().db_auth(chat_id)
             else:
-                msg = '𝙰𝚕𝚛𝚎𝚊𝚍𝚢 𝚞𝚗𝚊𝚞𝚝𝚑𝚘𝚛𝚒𝚣𝚎𝚍 𝚌𝚑𝚊𝚝'
+                msg = '𝙰𝚕𝚛𝚎𝚊𝚍𝚢 𝚊𝚞𝚝𝚑𝚘𝚛𝚒𝚣𝚎𝚍 𝚌𝚑𝚊𝚝'
 
         else:
             # Trying to authorize someone in specific
