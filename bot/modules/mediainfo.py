@@ -12,9 +12,9 @@ from bot.helper import post_to_telegraph, runcmd, safe_filename
 async def mediainfo(client, message):
     reply = message.reply_to_message
     if not reply:
-        await message.reply_text("Reply to Media first")
+        await message.reply_text("𝚁𝚎𝚙𝚕𝚢 𝚝𝚘 𝙼𝚎𝚍𝚒𝚊 𝚏𝚒𝚛𝚜𝚝🙄")
         return
-    process = await message.reply_text("`Processing...`")
+    process = await message.reply_text("`♻️𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐...`")
     x_media = None
     available_media = (
         "audio",
@@ -32,7 +32,7 @@ async def mediainfo(client, message):
         if x_media is not None:
             break
     if x_media is None:
-       await process.edit_text("Reply To a Valid Media Format")
+       await process.edit_text("𝚁𝚎𝚙𝚕𝚢 𝚃𝚘 𝚊 𝚅𝚊𝚕𝚒𝚍 𝙼𝚎𝚍𝚒𝚊 𝙵𝚘𝚛𝚖𝚊𝚝🙄")
        return
     media_type = str(type(x_media)).split("'")[1]
     file_path = safe_filename(await reply.download())
@@ -51,4 +51,4 @@ async def mediainfo(client, message):
     text_ = media_type.split(".")[-1].upper()
     link = post_to_telegraph(media_type, body_text)
     markup = InlineKeyboardMarkup([[InlineKeyboardButton(text=text_, url=link)]])
-    await process.edit_text("ℹ️ <b>🧾 MEDIA INFO 🧾</b>", reply_markup=markup)
+    await process.edit_text("ℹ️ <b>🧾 𝕄𝔼𝔻𝕀𝔸 𝕀ℕ𝔽𝕆 🧾</b>", reply_markup=markup)
