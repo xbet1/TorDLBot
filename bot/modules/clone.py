@@ -15,10 +15,10 @@ def cloneNode(update,context):
     else:
         uname = f'<a href="tg://user?id={update.message.from_user.id}">{update.message.from_user.first_name}</a>'
     if uname is not None:
-            cc = f'\n\n<b>👤Uploader :</b> {uname}'
+            cc = f'\n\n<b>👤𝚄𝚙𝚕𝚘𝚊𝚍𝚎𝚛 :</b> {uname}'
     if len(args) > 1:
         link = args[1]
-        msg = sendMessage(f"🌈Cloning🌈: <code>{link}</code>",context.bot,update)
+        msg = sendMessage(f"🌈𝙲𝚕𝚘𝚗𝚒𝚗𝚐🌈: <code>{link}</code>",context.bot,update)
         gd = GoogleDriveHelper()
         result, button = gd.clone(link)
         deleteMessage(context.bot,msg)
