@@ -34,24 +34,28 @@ def stats(update, context):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
-    stats = f'<b>⏰Bot Uptime:</b> {currentTime}\n' \
-            f'<b>⏱Start Time:</b> {current}\n' \
-            f'<b>🧰Total disk space:</b> {total}\n' \
-            f'<b>📮Used:</b> {used}  ' \
-            f'<b>🏮Free:</b> {free}\n\n' \
-            f'♻️Data Usage♻️\n<b>🔺Upload:</b> {sent}\n' \
-            f'<b>🔻Download:</b> {recv}\n\n' \
-            f'<b>📟CPU:</b> {cpuUsage}%\n' \
-            f'<b>💾RAM:</b> {memory}%\n' \
-            f'<b>💿DISK:</b> {disk}%'
+    stats = f'<b>╭─────┃ 𝔹𝕆𝕋  𝕊𝕋𝔸𝕋𝕀𝕊𝕋𝕀ℂ𝕊 ┃</b>\n' \
+            f'<b>│</b>\n' \
+            f'<b>├⏰𝙱𝚘𝚝 𝚄𝚙𝚝𝚒𝚖𝚎:</b> {currentTime}\n' \
+            f'<b>├⏱𝚂𝚝𝚊𝚛𝚝 𝚃𝚒𝚖𝚎:</b> {current}\n' \
+            f'<b>├🧰T𝚘𝚝𝚊𝚕 𝚍𝚒𝚜𝚔 𝚜𝚙𝚊𝚌𝚎:</b> {total}\n' \
+            f'<b>├📮𝚄𝚜𝚎𝚍:</b> {used}  ' \
+            f'<b>├🏮𝙵𝚛𝚎𝚎:</b> {free}\n\n' \
+            f'├───[ ♻️𝐃𝐚𝐭𝐚 𝐔𝐬𝐚𝐠𝐞 ]♻️\n<b>├🔺𝚄𝚙𝚕𝚘𝚊𝚍:</b> {sent}\n' \
+            f'<b>├🔻𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍:</b> {recv}\n\n' \
+            f'<b>├📟𝙲𝙿𝚄:</b> {cpuUsage}%\n' \
+            f'<b>├💾𝚁𝙰𝙼:</b> {memory}%\n' \
+            f'<b>├💿𝙳𝙸𝚂𝙺:</b> {disk}%\n' \
+            f'<b>│</b>\n' \
+            f'<b>╰─────┃ @ANonYmoUS_FriEND ┃</b>'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
 @run_async
 def start(update, context):
     start_string = f'''
-This bot can mirror all your links to Google drive🔰❗️ Engine qBittorrent⚡️
-Type /{BotCommands.HelpCommand} to get a list of available commands
+𝚃𝚑𝚒𝚜 𝚋𝚘𝚝 𝚌𝚊𝚗 𝚖𝚒𝚛𝚛𝚘𝚛 𝚊𝚕𝚕 𝚢𝚘𝚞𝚛 𝚕𝚒𝚗𝚔𝚜 𝚝𝚘 𝙶𝚘𝚘𝚐𝚕𝚎 𝚍𝚛𝚒𝚟𝚎🔰❗️ 𝐄𝐧𝐠𝐢𝐧𝐞 𝐪𝐁𝐢𝐭𝐭𝐨𝐫𝐫𝐞𝐧𝐭⚡️
+T𝚢𝚙𝚎 /{BotCommands.HelpCommand} 𝚝𝚘 𝚐𝚎𝚝 𝚊 𝚕𝚒𝚜𝚝 𝚘𝚏 𝚊𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜
 '''
     update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN)
 
@@ -59,15 +63,15 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 @run_async
 def repo(update, context):
     button = [
-    [InlineKeyboardButton("🛠 OWNER 🛠", url=f"https://t.me/ANonYmoUS_FriEND")],
-    [InlineKeyboardButton("🛠 OWNER 🛠", url=f"https://t.me/ANonYmoUS_FriEND")]]
+    [InlineKeyboardButton("🛠 𝕆𝕎ℕ𝔼ℝ 🛠", url=f"https://t.me/ANonYmoUS_FriEND")],
+    [InlineKeyboardButton("🛠 𝐎𝐖𝐍𝐄𝐑 🛠", url=f"https://t.me/ANonYmoUS_FriEND")]]
     reply_markup = InlineKeyboardMarkup(button)
     update.effective_message.reply_photo(IMAGE_URL, reply_markup=reply_markup)
 
 
 @run_async
 def restart(update, context):
-    restart_message = sendMessage("🤯Restarting, Please wait❗️", context.bot, update)
+    restart_message = sendMessage("🤯𝚁𝚎𝚜𝚝𝚊𝚛𝚝𝚒𝚗𝚐, 𝙿𝚕𝚎𝚊𝚜𝚎 𝚠𝚊𝚒𝚝...❗️", context.bot, update)
     LOGGER.info(f'Restarting the Bot...')
     # Save restart message object in order to reply to it after restarting
     fs_utils.clean_all()
@@ -79,9 +83,9 @@ def restart(update, context):
 @run_async
 def ping(update, context):
     start_time = int(round(time.time() * 1000))
-    reply = sendMessage("Starting Ping🖲", context.bot, update)
+    reply = sendMessage("𝕊𝕥𝕒𝕣𝕥𝕚𝕟𝕘 ℙ𝕚𝕟𝕘🖲", context.bot, update)
     end_time = int(round(time.time() * 1000))
-    editMessage(f'{end_time - start_time} ms', reply)
+    editMessage(f'{end_time - start_time} 𝚖𝚜', reply)
 
 
 @run_async
@@ -213,7 +217,7 @@ def main():
     if path.exists('restart.pickle'):
         with open('restart.pickle', 'rb') as status:
             restart_message = pickle.load(status)
-        restart_message.edit_text("Restarted Successfully!")
+        restart_message.edit_text("😎𝚁𝚎𝚜𝚝𝚊𝚛𝚝𝚎𝚍 𝚂𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕𝚕𝚢.❗️")
         LOGGER.info('Restarted Successfully!')
         remove('restart.pickle')
     bot.set_my_commands(botcmds)
