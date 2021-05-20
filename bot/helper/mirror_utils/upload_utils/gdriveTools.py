@@ -114,7 +114,7 @@ class GoogleDriveHelper:
         msg = ''
         try:
             res = self.__service.files().delete(fileId=file_id, supportsTeamDrives=IS_TEAM_DRIVE).execute()
-            msg = "𝚂𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕𝚕𝚢 𝚍𝚎𝚕𝚎𝚝𝚎𝚍"
+            msg = "𝚂𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕𝚕𝚢 𝚍𝚎𝚕𝚎𝚝𝚎𝚍😌"
         except HttpError as err:
             LOGGER.error(str(err))
             if "File not found" in str(err):
@@ -516,17 +516,17 @@ class GoogleDriveHelper:
                     msg += f"⁍<code>{file.get('name')}<br>(folder)📁</code><br>"
                     if SHORTENER is not None and SHORTENER_API is not None:
                         sfurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, furl)).text
-                        msg += f"<b><a href={sfurl}>Drive Link</a></b>"
+                        msg += f"<b><a href={sfurl}>🔰𝙳𝚛𝚒𝚟𝚎 𝙻𝚒𝚗𝚔🔰</a></b>"
                     else:
-                        msg += f"<b><a href={furl}>Drive Link</a></b>"
+                        msg += f"<b><a href={furl}>🔰𝙳𝚛𝚒𝚟𝚎 𝙻𝚒𝚗𝚔🔰</a></b>"
                     if INDEX_URL is not None:
                         url_path = requests.utils.quote(f'{file.get("name")}')
                         url = f'{INDEX_URL}/{url_path}/'
                         if SHORTENER is not None and SHORTENER_API is not None:
                             siurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, url)).text
-                            msg += f' <b>| <a href="{siurl}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{siurl}">🏓𝙸𝚗𝚍𝚎𝚡 𝙻𝚒𝚗𝚔🏓</a></b>'
                         else:
-                            msg += f' <b>| <a href="{url}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{url}">🏓𝙸𝚗𝚍𝚎𝚡 𝙻𝚒𝚗𝚔🏓</a></b>'
                 elif file.get('mimeType') == 'application/vnd.google-apps.shortcut':
                     msg += f"⁍<a href='https://drive.google.com/drive/folders/{file.get('id')}'>{file.get('name')}" \
                         f"</a> (shortcut)"
@@ -536,17 +536,17 @@ class GoogleDriveHelper:
                     msg += f"⁍<code>{file.get('name')}<br>({get_readable_file_size(int(file.get('size')))})📄</code><br>"
                     if SHORTENER is not None and SHORTENER_API is not None:
                         sfurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, furl)).text
-                        msg += f"<b><a href={sfurl}>Drive Link</a></b>"
+                        msg += f"<b><a href={sfurl}>🔰𝙳𝚛𝚒𝚟𝚎 𝙻𝚒𝚗𝚔🔰</a></b>"
                     else:
-                        msg += f"<b><a href={furl}>Drive Link</a></b>"
+                        msg += f"<b><a href={furl}>🔰𝙳𝚛𝚒𝚟𝚎 𝙻𝚒𝚗𝚔🔰</a></b>"
                     if INDEX_URL is not None:
                         url_path = requests.utils.quote(f'{file.get("name")}')
                         url = f'{INDEX_URL}/{url_path}'
                         if SHORTENER is not None and SHORTENER_API is not None:
                             siurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, url)).text
-                            msg += f' <b>| <a href="{siurl}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{siurl}">🏓𝙸𝚗𝚍𝚎𝚡 𝙻𝚒𝚗𝚔🏓</a></b>'
                         else:
-                            msg += f' <b>| <a href="{url}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{url}">🏓𝙸𝚗𝚍𝚎𝚡 𝙻𝚒𝚗𝚔🏓</a></b>'
                 msg += '<br><br>'
                 content_count += 1
                 if content_count == TELEGRAPHLIMIT :
@@ -558,12 +558,12 @@ class GoogleDriveHelper:
                 self.telegraph_content.append(msg)
 
             if len(self.telegraph_content) == 0:
-                return "❌ No Result Found ❌", None
+                return "❌ 𝙽𝚘 𝚁𝚎𝚜𝚞𝚕𝚝 𝙵𝚘𝚞𝚗𝚍 ❌", None
 
             for content in self.telegraph_content :
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                        title = 'DVDWORLD Mirror Bot Search',
-                                                        author_name='ANonYmoUSFriEND Mirror Bot',
+                                                        title = '𝔻𝕍𝔻𝕎𝕆ℝ𝕃𝔻 𝙼𝚒𝚛𝚛𝚘𝚛 𝙱𝚘𝚝 𝚂𝚎𝚊𝚛𝚌𝚑',
+                                                        author_name='𝔸ℕ𝕠𝕟𝕐𝕞𝕠𝕌𝕊𝔽𝕣𝕚𝔼ℕ𝔻 𝙼𝚒𝚛𝚛𝚘𝚛 𝙱𝚘𝚝',
                                                         author_url='https://t.me/ANonYmoUS_FriEND',
                                                         html_content=content
                                                         )['path'])
@@ -572,9 +572,9 @@ class GoogleDriveHelper:
             if self.num_of_path > 1:
                 self.edit_telegraph()
 
-            msg = f"<b>🔎 Found 📚{len(response['files'])} results for <i>{fileName}</i></b>"
+            msg = f"<b>🔎 𝙵𝚘𝚞𝚗𝚍 📚{len(response['files'])} results for <i>{fileName}</i></b>"
             buttons = button_build.ButtonMaker()   
-            buttons.buildbutton("🏓 CLICK HERE 🏓", f"https://telegra.ph/{self.path[0]}")
+            buttons.buildbutton("🏓 𝙲𝙻𝙸𝙲𝙺 𝙷𝙴𝚁𝙴 🏓", f"https://telegra.ph/{self.path[0]}")
 
             return msg, InlineKeyboardMarkup(buttons.build_menu(1))
 
