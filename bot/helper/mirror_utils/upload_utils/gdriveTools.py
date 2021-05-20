@@ -562,7 +562,7 @@ class GoogleDriveHelper:
 
             for content in self.telegraph_content :
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                        title = 'TITLE_NME',
+                                                        title = '𝔻𝕍𝔻𝕎𝕆ℝ𝕃𝔻 𝙼𝚒𝚛𝚛𝚘𝚛 𝙱𝚘𝚝 𝚂𝚎𝚊𝚛𝚌𝚑',
                                                         author_name='𝔸ℕ𝕠𝕟𝕐𝕞𝕠𝕌𝕊𝔽𝕣𝕚𝔼ℕ𝔻 𝙼𝚒𝚛𝚛𝚘𝚛 𝙱𝚘𝚝',
                                                         author_url='https://t.me/ANonYmoUS_FriEND',
                                                         html_content=content
