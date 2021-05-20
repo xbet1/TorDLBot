@@ -91,7 +91,7 @@ def update_all_messages():
                     uldl_bytes += float(speedy.split('M')[0]) * 1048576
         dlspeed = get_readable_file_size(dlspeed_bytes)
         ulspeed = get_readable_file_size(uldl_bytes)
-        msg += f"\n<b>📮𝚄𝚂𝙴𝙳8:</b> {used} | <b>🏮𝙵𝚁𝙴𝙴:</b> {free}\n<b>𝗗𝗟:</b> {dlspeed}ps 🔻 | <b>𝗨𝗟:</b> {ulspeed}ps 🔺\n"
+        msg += f"\n<b>📮𝚄𝚂𝙴𝙳8:</b> {used} | <b>🏮𝙵𝚁𝙴𝙴:</b> {free}\n<b>𝗗𝗢𝗪𝗡:</b> {dlspeed}ps 🔻 | <b>𝗨𝗣:</b> {ulspeed}ps 🔺\n"
     with status_reply_dict_lock:
         for chat_id in list(status_reply_dict.keys()):
             if status_reply_dict[chat_id] and msg != status_reply_dict[chat_id].text:
@@ -129,7 +129,7 @@ def sendStatusMessage(msg, bot):
                     uldl_bytes += float(speedy.split('M')[0]) * 1048576
         dlspeed = get_readable_file_size(dlspeed_bytes)
         ulspeed = get_readable_file_size(uldl_bytes)
-        progress += f"\n<b>📮𝚄𝚂𝙴𝙳:</b> {used} | <b>🏮𝙵𝚁𝙴𝙴:</b> {free}\n<b>𝗗𝗟:</b> {dlspeed}ps 🔻 | <b>𝗨𝗟:</b> {ulspeed}ps 🔺\n"
+        progress += f"\n<b>📮𝚄𝚂𝙴𝙳:</b> {used} | <b>🏮𝙵𝚁𝙴𝙴:</b> {free}\n<b>𝗗𝗢𝗪𝗡:</b> {dlspeed}ps 🔻 | <b>𝗨𝗣:</b> {ulspeed}ps 🔺\n"
     with status_reply_dict_lock:
         if msg.message.chat.id in list(status_reply_dict.keys()):
             try:
