@@ -40,13 +40,13 @@ def cancel_mirror(update, context):
                 msg = "Please reply to the /mirror message which was used to start the download or /cancel gid to cancel it!"
                 sendMessage(msg, context.bot, update)
                 return
-    if dl.status() == "Uploading...📤":
+    if dl.status() == "𝚄𝚙𝚕𝚘𝚊𝚍𝚒𝚗𝚐...📤":
         sendMessage("Upload in Progress, You Can't Cancel It.", context.bot, update)
         return
-    elif dl.status() == "Archiving...🔐":
+    elif dl.status() == "𝙰𝚛𝚌𝚑𝚒𝚟𝚒𝚗𝚐...🔐":
         sendMessage("Archival in Progress, You Can't Cancel It.", context.bot, update)
         return
-    elif dl.status() == "Extracting...📂":
+    elif dl.status() == "𝙴𝚡𝚝𝚛𝚊𝚌𝚝𝚒𝚗𝚐...📂":
         sendMessage("Extract in Progress, You Can't Cancel It.", context.bot, update)
         return
     else:
