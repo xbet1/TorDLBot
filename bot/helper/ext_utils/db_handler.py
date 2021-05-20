@@ -21,7 +21,7 @@ class DbManger:
     def db_auth(self,chat_id: int):
         self.connect()
         if self.err :
-            return "𝚃𝚑𝚎𝚛𝚎'𝚜 𝚜𝚘𝚖𝚎 𝚎𝚛𝚛𝚘𝚛 𝚌𝚑𝚎𝚌𝚔 𝚕𝚘𝚐 𝚏𝚘𝚛 𝚍𝚎𝚝𝚊𝚒𝚕𝚜"
+            return "T𝚑𝚎𝚛𝚎'𝚜 𝚜𝚘𝚖𝚎 𝚎𝚛𝚛𝚘𝚛 𝚌𝚑𝚎𝚌𝚔 𝚕𝚘𝚐 𝚏𝚘𝚛 𝚍𝚎𝚝𝚊𝚒𝚕𝚜"
         else:
             sql = 'INSERT INTO users VALUES ({});'.format(chat_id)
             self.cur.execute(sql)
@@ -33,7 +33,7 @@ class DbManger:
     def db_unauth(self,chat_id: int):
         self.connect()
         if self.err :
-            return "𝚃𝚑𝚎𝚛𝚎'𝚜 𝚜𝚘𝚖𝚎 𝚎𝚛𝚛𝚘𝚛 𝚌𝚑𝚎𝚌𝚔 𝚕𝚘𝚐 𝚏𝚘𝚛 𝚍𝚎𝚝𝚊𝚒𝚕𝚜"
+            return "T𝚑𝚎𝚛𝚎'𝚜 𝚜𝚘𝚖𝚎 𝚎𝚛𝚛𝚘𝚛 𝚌𝚑𝚎𝚌𝚔 𝚕𝚘𝚐 𝚏𝚘𝚛 𝚍𝚎𝚝𝚊𝚒𝚕𝚜"
         else:
             sql = 'DELETE from users where uid = {};'.format(chat_id)
             self.cur.execute(sql)
@@ -47,7 +47,7 @@ class DbManger:
     def db_addsudo(self,chat_id: int):
         self.connect()
         if self.err :
-            return "𝚃𝚑𝚎𝚛𝚎'𝚜 𝚜𝚘𝚖𝚎 𝚎𝚛𝚛𝚘𝚛 𝚌𝚑𝚎𝚌𝚔 𝚕𝚘𝚐 𝚏𝚘𝚛 𝚍𝚎𝚝𝚊𝚒𝚕𝚜"
+            return "T𝚑𝚎𝚛𝚎'𝚜 𝚜𝚘𝚖𝚎 𝚎𝚛𝚛𝚘𝚛 𝚌𝚑𝚎𝚌𝚔 𝚕𝚘𝚐 𝚏𝚘𝚛 𝚍𝚎𝚝𝚊𝚒𝚕𝚜"
         else:
             if chat_id in AUTHORIZED_CHATS:
                 sql = 'UPDATE users SET sudo = TRUE where uid = {};'.format(chat_id)
@@ -68,7 +68,7 @@ class DbManger:
     def db_rmsudo(self,chat_id: int):
         self.connect()
         if self.err :
-            return "𝚃𝚑𝚎𝚛𝚎'𝚜 𝚜𝚘𝚖𝚎 𝚎𝚛𝚛𝚘𝚛 𝚌𝚑𝚎𝚌𝚔 𝚕𝚘𝚐 𝚏𝚘𝚛 𝚍𝚎𝚝𝚊𝚒𝚕𝚜"
+            return "T𝚑𝚎𝚛𝚎'𝚜 𝚜𝚘𝚖𝚎 𝚎𝚛𝚛𝚘𝚛 𝚌𝚑𝚎𝚌𝚔 𝚕𝚘𝚐 𝚏𝚘𝚛 𝚍𝚎𝚝𝚊𝚒𝚕𝚜"
         else:
             sql = 'UPDATE users SET sudo = FALSE where uid = {};'.format(chat_id)
             self.cur.execute(sql)
